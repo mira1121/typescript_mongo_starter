@@ -1,4 +1,4 @@
-service: typescript_mongo_starter
+service: typescriptmongostarter
 
 provider:
     name: aws

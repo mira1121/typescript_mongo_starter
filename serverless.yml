@@ -2,6 +2,6 @@ service: typescript_mongo_starter
 
 provider:
     name: aws
-    runtime: nodejs18.x
+    runtime: nodejs12.x
     stage: dev
     region: ap-southeast-1

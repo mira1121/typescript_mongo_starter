@@ -5,3 +5,9 @@ provider:
     runtime: nodejs18.x
     stage: dev
     region: ap-southeast-1
+
+functions:
+    hello:
+        handler: src/controllers/user.create
+        timeout: 60 # seconds
+        memorySize: 128 # mb

@@ -48,6 +48,7 @@
         "passport-facebook": "3.0.0",
         "passport-local": "1.0.0",
         "pug": "3.0.2",
+        "serverless-http": "^3.2.0",
         "winston": "3.3.3"
     },
     "devDependencies": {

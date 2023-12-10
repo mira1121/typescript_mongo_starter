@@ -36,7 +36,6 @@ const analyse = async (data: string, name: string): Promise<string> => {
         FeatureTypes: ["FORMS"],
     };
     const cardData = await textract.analyzeDocument(params).promise();
-    console.log("cardData -----", cardData.Blocks);
     return cardData.Blocks ? cardData.Blocks[0].Text : "";
 };
 

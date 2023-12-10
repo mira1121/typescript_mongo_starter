@@ -5,9 +5,23 @@ provider:
     runtime: nodejs18.x
     stage: dev
     region: ap-southeast-1
+    memorySize: 128
 
 functions:
     hello:
         handler: src/controllers/user.create
         timeout: 60 # seconds
         memorySize: 128 # mb
+        events:
+            - http: ANY /{myProxy+}
+            - http: ANY /
+
+environment:
+    MONGODB_URI: mongodb://<mlab_user>:<mlab_password>@<mlab_connection_url>
+    MONGODB_URI_LOCAL: mongodb://0.0.0.0:27017/mira
+    SESSION_SECRET: sessionsecret
+    PORT: 3001
+    AWS_ACCESS_KEY_ID: AKIASJ47F2FXRXANHAHX
+    AWS_SECRET_ACCESS_KEY: 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
+    AWS_REGION: ap-southeast-1
+    AWS_BUCKET: mira-test-s3

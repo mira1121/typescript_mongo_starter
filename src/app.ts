@@ -11,6 +11,7 @@ import passport from "passport";
 import bluebird from "bluebird";
 import { MONGODB_URI, SESSION_SECRET } from "./util/secrets";
 import router from "./router";
+import cors from "cors";
 
 // Create Express server
 const app = express();
@@ -33,6 +34,7 @@ app.set("view engine", "pug");
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 app.use(session({
     resave: true,
     saveUninitialized: true,
